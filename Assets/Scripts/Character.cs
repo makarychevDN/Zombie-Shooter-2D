@@ -34,12 +34,8 @@ public class Character : MonoBehaviour
         hp -= damageValue;
         OnHealthDecreased.Invoke(hp);
 
-        print("1");
-
         if(hp <= 0) 
         {
-            print("2");
-
             OnHpEnded.Invoke();
             Destroy(gameObject);
         }
