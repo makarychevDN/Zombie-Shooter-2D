@@ -8,6 +8,7 @@ public class Character : MonoBehaviour
     [SerializeField] private int hp;
     [SerializeField] protected Transform sprite;
     [SerializeField] protected Animator animator;
+    [SerializeField] private AudioSource applyDamageImpact;
 
     public UnityEvent<int> OnHealthDecreased;
     public UnityEvent OnHpEnded;
@@ -33,8 +34,9 @@ public class Character : MonoBehaviour
     {
         hp -= damageValue;
         OnHealthDecreased.Invoke(hp);
+        applyDamageImpact.Play();
 
-        if(hp <= 0) 
+        if (hp <= 0) 
         {
             OnHpEnded.Invoke();
             Destroy(gameObject);

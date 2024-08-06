@@ -9,6 +9,8 @@ public class Human : Character
     [SerializeField] private float timeBetweenShotsInBurst;
     [SerializeField] private GameObject fireParticles;
     [SerializeField] private int ammo = 20;
+    [SerializeField] private AudioSource shootSound;
+    [SerializeField] private AudioSource pickUpAmmoSound;
     private float fireParticlesExistingTime = 0.05f;
 
     public UnityEvent OnAmmoEnded;
@@ -18,10 +20,12 @@ public class Human : Character
 
     public void ShootOnce()
     {
-        fireParticles.SetActive(true);
-        Invoke(nameof(DisableFireParticles), fireParticlesExistingTime);
         var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
         spawnedBullet.SetVelocity(pointOfBulletSpawn.right);
+
+        Invoke(nameof(DisableFireParticles), fireParticlesExistingTime);
+        fireParticles.SetActive(true);
+        shootSound.Play();
 
         ammo--;
         OnAmmoUpdated.Invoke(ammo);
@@ -43,6 +47,7 @@ public class Human : Character
     public void PickUpAmmo(int value)
     {
         ammo += value;
+        pickUpAmmoSound.Play();
         OnAmmoUpdated.Invoke(ammo);
     }
 
