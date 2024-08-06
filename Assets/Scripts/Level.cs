@@ -8,6 +8,8 @@ public class Level : MonoBehaviour
     [SerializeField] private GameObject gameOverScreen;
     [SerializeField] private Button exitButton;
     [SerializeField] private Button restartButton;
+    [SerializeField] private ZombiesSpawner zombiesSpawner;
+    [SerializeField] private UIAmmoCounter uIAmmoCounter;
 
     private void Awake()
     {
@@ -15,6 +17,8 @@ public class Level : MonoBehaviour
         player.OnAmmoEnded.AddListener(ShowGameOverScreen);
         exitButton.onClick.AddListener(ExitApp);
         restartButton.onClick.AddListener(RestartLevel);
+        zombiesSpawner.Init(player.transform);
+        uIAmmoCounter.Init(player);
     }
 
     private void ShowGameOverScreen()

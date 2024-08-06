@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class UIAmmoCounter : MonoBehaviour
 {
-    [SerializeField] private Human player;
     [SerializeField] private TMP_Text textField;
 
-    private void Awake()
+    public void Init(Human player)
     {
         player.OnAmmoUpdated.AddListener(UpdateUiCounter);
         UpdateUiCounter(player.Ammo);
