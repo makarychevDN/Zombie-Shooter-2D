@@ -1211,7 +1211,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zombiePrefabs:
-  - {fileID: 8432954424514108087, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
+  - {fileID: 7537726843742571271, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
   spawnPoints:
   - {fileID: 1644495639}
   - {fileID: 1372644493}
@@ -1418,6 +1418,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7537726843742571271, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
+      propertyPath: target
+      value: 
+      objectReference: {fileID: 1905875841}
     - target: {fileID: 8379292141603330188, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0

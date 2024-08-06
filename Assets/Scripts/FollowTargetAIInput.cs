@@ -17,6 +17,9 @@ public class FollowTargetAIInput : MonoBehaviour
 
     private void Movement()
     {
+        if (target == null)
+            return;
+
         character.Move(target.transform.position.x > transform.position.x ? 1 : -1);
     }
 }

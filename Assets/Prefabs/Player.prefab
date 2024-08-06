@@ -123,6 +123,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 1925688260, guid: 7b11041df9c488b46bebfa809da5a220, type: 3}
+    - target: {fileID: 1284053016586826089, guid: d340464880695844893c29278fd25990, type: 3}
+      propertyPath: character
+      value: 
+      objectReference: {fileID: 8903959306563843993}
+    - target: {fileID: 8505583592605675460, guid: d340464880695844893c29278fd25990, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8505583592605675460, guid: d340464880695844893c29278fd25990, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -132,22 +144,19 @@ PrefabInstance:
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 803397122344492586, guid: d340464880695844893c29278fd25990, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 8903959306563843993}
+    - targetCorrespondingSourceObject: {fileID: 803397122344492586, guid: d340464880695844893c29278fd25990, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 7990525321294524721}
   m_SourcePrefab: {fileID: 100100000, guid: d340464880695844893c29278fd25990, type: 3}
---- !u!114 &7666175159230260912 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 803397122344492591, guid: d340464880695844893c29278fd25990, type: 3}
-  m_PrefabInstance: {fileID: 7009154482835421343}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7666175159230260917}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbf42d5d73d841c43a1fc446417c5d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &7666175159230260914 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 803397122344492589, guid: d340464880695844893c29278fd25990, type: 3}
+  m_PrefabInstance: {fileID: 7009154482835421343}
+  m_PrefabAsset: {fileID: 0}
+--- !u!50 &7666175159230260915 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 803397122344492588, guid: d340464880695844893c29278fd25990, type: 3}
   m_PrefabInstance: {fileID: 7009154482835421343}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &7666175159230260917 stripped
@@ -155,6 +164,31 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 803397122344492586, guid: d340464880695844893c29278fd25990, type: 3}
   m_PrefabInstance: {fileID: 7009154482835421343}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &8903959306563843993
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7666175159230260917}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0805c7599a9f30546926e53ce118544a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rb: {fileID: 7666175159230260915}
+  speed: 5
+  hp: 1
+  OnHealthDecreased:
+    m_PersistentCalls:
+      m_Calls: []
+  OnHPEnded:
+    m_PersistentCalls:
+      m_Calls: []
+  bulletPrefab: {fileID: 3203678439514686056, guid: 60ff7c3a513d81348aa8fd0b19b2fc74, type: 3}
+  pointOfBulletSpawn: {fileID: 8303558311814710149}
+  amountOfBulletsInBurst: 3
+  timeBetweenShotsInBurst: 0.05
 --- !u!114 &7990525321294524721
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -167,5 +201,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6f4f9fbb12440e4d9f47af739f9b551, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  character: {fileID: 7666175159230260912}
+  playerCharacters: {fileID: 8903959306563843993}
   requredHoldingTimeToFireBurst: 0.1

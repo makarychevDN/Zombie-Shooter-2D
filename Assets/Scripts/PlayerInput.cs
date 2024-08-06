@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInput : MonoBehaviour
 {
-    [SerializeField] private Character character;
+    [SerializeField] private Human playerCharacters;
     [SerializeField] private float requredHoldingTimeToFireBurst = 0.1f;
     private float timeOfHoldingShotButton;
     private bool ableToMakeFireBurstInput = true;
@@ -15,7 +15,7 @@ public class PlayerInput : MonoBehaviour
 
     private void Movement()
     {
-        character.Move(Input.GetAxisRaw("Horizontal"));
+        playerCharacters.Move(Input.GetAxisRaw("Horizontal"));
     }
 
     private void Shooting()
@@ -27,7 +27,7 @@ public class PlayerInput : MonoBehaviour
 
         if (ableToMakeFireBurstInput && timeOfHoldingShotButton > requredHoldingTimeToFireBurst)
         {
-            character.FireBurst();
+            playerCharacters.FireBurst();
             ableToMakeFireBurstInput = false;
             return;
         }
@@ -36,7 +36,7 @@ public class PlayerInput : MonoBehaviour
         {
             if(timeOfHoldingShotButton <= requredHoldingTimeToFireBurst)
             {
-                character.ShootOnce();
+                playerCharacters.ShootOnce();
             }
 
             ableToMakeFireBurstInput = true;

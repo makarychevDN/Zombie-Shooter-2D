@@ -7,13 +7,11 @@ public class Character : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int hp;
 
-    [SerializeField] private Projectile bulletPrefab;
-    [SerializeField] private Transform pointOfBulletSpawn;
-    [SerializeField] private int amountOfBulletsInBurst;
-    [SerializeField] private float timeBetweenShotsInBurst;
-
-    public UnityEvent OnApplyDamage;
+    public UnityEvent<int> OnHealthDecreased;
     public UnityEvent OnHPEnded;
+
+
+    public int Hp => hp;
 
     public void Move(float inputX)
     {
@@ -23,25 +21,12 @@ public class Character : MonoBehaviour
     public void ApplyDamage(int damageValue)
     {
         hp -= damageValue;
+        OnHealthDecreased.Invoke(hp);
 
         if(hp <= 0) 
         {
             OnHPEnded.Invoke();
             Destroy(gameObject);
-        }
-    }
-
-    public void ShootOnce()
-    {
-        var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
-        spawnedBullet.SetVelocity();
-    }
-
-    public void FireBurst()
-    {
-        for(int i = 0; i < amountOfBulletsInBurst; i++)
-        {
-            Invoke(nameof(ShootOnce), i * timeBetweenShotsInBurst);
         }
     }
 }
