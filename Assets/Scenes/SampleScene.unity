@@ -2214,6 +2214,7 @@ MonoBehaviour:
   restartButton: {fileID: 1041181526}
   zombiesSpawner: {fileID: 1568353250}
   uIAmmoCounter: {fileID: 995135182}
+  projectilesPoolManager: {fileID: 1779652211}
 --- !u!4 &1672945437
 Transform:
   m_ObjectHideFlags: 0
@@ -2231,9 +2232,55 @@ Transform:
   - {fileID: 1905875841}
   - {fileID: 458530093}
   - {fileID: 943493158}
+  - {fileID: 1779652210}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1779652209
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1779652210}
+  - component: {fileID: 1779652211}
+  m_Layer: 0
+  m_Name: Projectiles Pool Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1779652210
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779652209}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1672945437}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1779652211
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1779652209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 322bb8d020b236a4abd48a12dfd2c1c9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectilePrefab: {fileID: 3203678439514686056, guid: 60ff7c3a513d81348aa8fd0b19b2fc74, type: 3}
 --- !u!1 &1815114611
 GameObject:
   m_ObjectHideFlags: 0
@@ -2688,6 +2735,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8903959306563843993, guid: 9325c2c6385bf3542aae934f73acbf2a, type: 3}
+      propertyPath: projectilesPoolManager
+      value: 
+      objectReference: {fileID: 1779652211}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

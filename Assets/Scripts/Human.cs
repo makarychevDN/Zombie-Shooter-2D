@@ -11,6 +11,7 @@ public class Human : Character
     [SerializeField] private int ammo = 20;
     [SerializeField] private AudioSource shootSound;
     [SerializeField] private AudioSource pickUpAmmoSound;
+    private ProjectilesPoolManager projectilesPoolManager;
     private float fireParticlesExistingTime = 0.05f;
 
     public UnityEvent OnAmmoEnded;
@@ -26,8 +27,9 @@ public class Human : Character
             return;
         }
 
-        var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
-        spawnedBullet.SetVelocity(pointOfBulletSpawn.right);
+        var spawnedProjectile = projectilesPoolManager.GetProjectile();
+        spawnedProjectile.transform.position = pointOfBulletSpawn.transform.position;
+        spawnedProjectile.SetVelocity(pointOfBulletSpawn.right);
 
         Invoke(nameof(DisableFireParticles), fireParticlesExistingTime);
         fireParticles.SetActive(true);
@@ -43,6 +45,11 @@ public class Human : Character
         {
             Invoke(nameof(ShootOnce), i * timeBetweenShotsInBurst);
         }
+    }
+
+    public void Init(ProjectilesPoolManager projectilesPoolManager)
+    {
+        this.projectilesPoolManager = projectilesPoolManager;
     }
 
     public void PickUpAmmo(int value)

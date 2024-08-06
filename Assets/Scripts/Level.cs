@@ -10,6 +10,7 @@ public class Level : MonoBehaviour
     [SerializeField] private Button restartButton;
     [SerializeField] private ZombiesSpawner zombiesSpawner;
     [SerializeField] private UIAmmoCounter uIAmmoCounter;
+    [SerializeField] private ProjectilesPoolManager projectilesPoolManager;
 
     private void Awake()
     {
@@ -19,6 +20,7 @@ public class Level : MonoBehaviour
         restartButton.onClick.AddListener(RestartLevel);
         zombiesSpawner.Init(player.transform);
         uIAmmoCounter.Init(player);
+        player.Init(projectilesPoolManager);
     }
 
     private void ShowGameOverScreen()
