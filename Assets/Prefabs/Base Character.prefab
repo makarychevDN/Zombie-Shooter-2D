@@ -139,7 +139,7 @@ Transform:
   - {fileID: 803397123931663760}
   - {fileID: 2409675437654641425}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &803397122344492588
 Rigidbody2D:
@@ -275,7 +275,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 195
   m_Sprite: {fileID: 21300000, guid: b51dea53643c34332b1c8cfc0865d0c4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
