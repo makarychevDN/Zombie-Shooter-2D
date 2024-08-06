@@ -7,5 +7,10 @@ public class PlayerInput : MonoBehaviour
     private void Update()
     {
         character.Move(Input.GetAxisRaw("Horizontal"));
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            character.Shot();
+        }
     }
 }
