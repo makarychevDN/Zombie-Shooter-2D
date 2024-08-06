@@ -7,6 +7,7 @@ public class Character : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private int hp;
     [SerializeField] private Transform sprite;
+    [SerializeField] protected Animator animator;
 
     public UnityEvent<int> OnHealthDecreased;
     public UnityEvent OnHPEnded;
@@ -14,14 +15,18 @@ public class Character : MonoBehaviour
 
     public int Hp => hp;
 
-    public void Move(float inputX)
+    public virtual void Move(float inputX)
     {
-        rb.velocity = new Vector2 (inputX * speed, 0);
+        rb.velocity = new Vector2(inputX * speed, 0);
 
         if (inputX == 0)
+        {
+            animator.SetTrigger("stay");
             return;
+        }
 
         sprite.rotation = Quaternion.Euler(0, inputX < 0 ? 180 : 0, 0);
+        animator.SetTrigger("run");
     }
 
     public void ApplyDamage(int damageValue)

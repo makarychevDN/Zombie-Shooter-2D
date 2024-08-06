@@ -137,6 +137,7 @@ MonoBehaviour:
   speed: 3
   hp: 2
   sprite: {fileID: 677479024336804568}
+  animator: {fileID: 6532282828051799284}
   OnHealthDecreased:
     m_PersistentCalls:
       m_Calls: []
