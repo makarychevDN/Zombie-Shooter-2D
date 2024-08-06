@@ -144,6 +144,7 @@ MonoBehaviour:
   OnHPEnded:
     m_PersistentCalls:
       m_Calls: []
+  ammoPrefab: {fileID: 3620302252767371393, guid: 3b9319c9e08fae74e90ec82a4064ce58, type: 3}
 --- !u!50 &677479023847270756 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 803397122344492588, guid: d340464880695844893c29278fd25990, type: 3}

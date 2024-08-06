@@ -20,8 +20,7 @@ public class AmmoBox : MonoBehaviour
         if (player != null)
         {
             player.PickUpAmmo(actualAmountOfAmmo);
+            Destroy(gameObject);
         }
-
-        Destroy(gameObject);
     }
 }
