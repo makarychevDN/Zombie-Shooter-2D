@@ -12,6 +12,9 @@ public class Human : Character
     private float fireParticlesExistingTime = 0.05f;
 
     public UnityEvent OnAmmoEnded;
+    public UnityEvent<int> OnAmmoSpent;
+
+    public int Ammo => ammo;
 
     public void ShootOnce()
     {
@@ -19,10 +22,14 @@ public class Human : Character
         Invoke(nameof(DisableFireParticles), fireParticlesExistingTime);
         var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
         spawnedBullet.SetVelocity();
+
         ammo--;
+        OnAmmoSpent.Invoke(ammo);
 
         if (ammo == 0)
+        {
             OnAmmoEnded.Invoke();
+        }
     }
 
     public void FireBurst()
