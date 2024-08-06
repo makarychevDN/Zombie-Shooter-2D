@@ -1,0 +1,20 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.TextCore.Text;
+
+public class FollowTargetAIInput : MonoBehaviour
+{
+    [SerializeField] private Transform target;
+    [SerializeField] private Character character;
+
+    private void Update()
+    {
+        Movement();
+    }
+
+    private void Movement()
+    {
+        character.Move(target.transform.position.x > transform.position.x ? 1 : -1);
+    }
+}
