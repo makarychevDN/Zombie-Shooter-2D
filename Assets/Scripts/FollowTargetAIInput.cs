@@ -8,6 +8,8 @@ public class FollowTargetAIInput : MonoBehaviour
     [SerializeField] private Transform target;
     [SerializeField] private Character character;
 
+    public void SetTarget(Transform target) => this.target = target;
+
     private void Update()
     {
         Movement();
