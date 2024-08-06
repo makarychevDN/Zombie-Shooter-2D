@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Character : MonoBehaviour
 {
@@ -11,6 +12,9 @@ public class Character : MonoBehaviour
     [SerializeField] private int amountOfBulletsInBurst;
     [SerializeField] private float timeBetweenShotsInBurst;
 
+    public UnityEvent OnApplyDamage;
+    public UnityEvent OnHPEnded;
+
     public void Move(float inputX)
     {
         rb.velocity = new Vector2 (inputX * speed, 0);
@@ -19,6 +23,12 @@ public class Character : MonoBehaviour
     public void ApplyDamage(int damageValue)
     {
         hp -= damageValue;
+
+        if(hp <= 0) 
+        {
+            OnHPEnded.Invoke();
+            Destroy(gameObject);
+        }
     }
 
     public void ShootOnce()
