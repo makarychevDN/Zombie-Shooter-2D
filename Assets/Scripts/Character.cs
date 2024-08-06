@@ -6,7 +6,7 @@ public class Character : MonoBehaviour
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private float speed;
     [SerializeField] private int hp;
-    [SerializeField] private Transform sprite;
+    [SerializeField] protected Transform sprite;
     [SerializeField] protected Animator animator;
 
     public UnityEvent<int> OnHealthDecreased;

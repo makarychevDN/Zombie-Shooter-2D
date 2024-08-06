@@ -20,8 +20,8 @@ public class Projectile : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void SetVelocity()
+    public void SetVelocity(Vector3 direction)
     {
-        rb.velocity = Vector3.right * speed;
+        rb.velocity = direction * speed;
     }
 }

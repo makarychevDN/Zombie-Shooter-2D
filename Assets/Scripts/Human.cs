@@ -21,7 +21,7 @@ public class Human : Character
         fireParticles.SetActive(true);
         Invoke(nameof(DisableFireParticles), fireParticlesExistingTime);
         var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
-        spawnedBullet.SetVelocity();
+        spawnedBullet.SetVelocity(pointOfBulletSpawn.right);
 
         ammo--;
         OnAmmoSpent.Invoke(ammo);
