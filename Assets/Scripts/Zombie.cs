@@ -18,7 +18,7 @@ public class Zombie : Character
 
     private void Awake()
     {
-        OnHPEnded.AddListener(DropAmmo);
+        OnHpEnded.AddListener(DropAmmo);
     }
 
     private void DropAmmo()

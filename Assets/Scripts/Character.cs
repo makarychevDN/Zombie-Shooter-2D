@@ -10,7 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] protected Animator animator;
 
     public UnityEvent<int> OnHealthDecreased;
-    public UnityEvent OnHPEnded;
+    public UnityEvent OnHpEnded;
 
 
     public int Hp => hp;
@@ -34,9 +34,13 @@ public class Character : MonoBehaviour
         hp -= damageValue;
         OnHealthDecreased.Invoke(hp);
 
+        print("1");
+
         if(hp <= 0) 
         {
-            OnHPEnded.Invoke();
+            print("2");
+
+            OnHpEnded.Invoke();
             Destroy(gameObject);
         }
     }
