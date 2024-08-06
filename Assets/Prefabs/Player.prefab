@@ -23,12 +23,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2270984798075155934}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.44, y: 0.485, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1.25, y: 0.24500002, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 7666175159230260914}
+  m_Father: {fileID: 7666175159714813199}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &7009154482835421343
@@ -138,7 +138,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: 803397122344492589, guid: d340464880695844893c29278fd25990, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 803397123931663760, guid: d340464880695844893c29278fd25990, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8303558311814710149}
     m_AddedComponents:
@@ -149,11 +149,6 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 7990525321294524721}
   m_SourcePrefab: {fileID: 100100000, guid: d340464880695844893c29278fd25990, type: 3}
---- !u!4 &7666175159230260914 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 803397122344492589, guid: d340464880695844893c29278fd25990, type: 3}
-  m_PrefabInstance: {fileID: 7009154482835421343}
-  m_PrefabAsset: {fileID: 0}
 --- !u!50 &7666175159230260915 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 803397122344492588, guid: d340464880695844893c29278fd25990, type: 3}
@@ -179,6 +174,7 @@ MonoBehaviour:
   rb: {fileID: 7666175159230260915}
   speed: 5
   hp: 1
+  sprite: {fileID: 7666175159714813199}
   OnHealthDecreased:
     m_PersistentCalls:
       m_Calls: []
@@ -203,3 +199,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerCharacters: {fileID: 8903959306563843993}
   requredHoldingTimeToFireBurst: 0.1
+--- !u!4 &7666175159714813199 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 803397123931663760, guid: d340464880695844893c29278fd25990, type: 3}
+  m_PrefabInstance: {fileID: 7009154482835421343}
+  m_PrefabAsset: {fileID: 0}

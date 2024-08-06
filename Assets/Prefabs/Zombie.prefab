@@ -136,6 +136,7 @@ MonoBehaviour:
   rb: {fileID: 677479023847270756}
   speed: 3
   hp: 2
+  sprite: {fileID: 677479024336804568}
   OnHealthDecreased:
     m_PersistentCalls:
       m_Calls: []
@@ -145,6 +146,11 @@ MonoBehaviour:
 --- !u!50 &677479023847270756 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 803397122344492588, guid: d340464880695844893c29278fd25990, type: 3}
+  m_PrefabInstance: {fileID: 162374744222201672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &677479024336804568 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 803397123931663760, guid: d340464880695844893c29278fd25990, type: 3}
   m_PrefabInstance: {fileID: 162374744222201672}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &677479024336804569 stripped
