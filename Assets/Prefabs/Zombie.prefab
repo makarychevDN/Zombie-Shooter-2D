@@ -266,7 +266,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rb: {fileID: 677479023847270756}
   speed: 3
-  hp: 2
+  hp: 8
   sprite: {fileID: 677479024336804568}
   animator: {fileID: 6532282828051799284}
   applyDamageImpact: {fileID: 3112790000478400043}
