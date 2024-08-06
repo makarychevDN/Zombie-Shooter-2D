@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 677479023847270681, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
+      propertyPath: m_Size.y
+      value: 1.6836221
+      objectReference: {fileID: 0}
     - target: {fileID: 677479023847270754, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
       propertyPath: m_Name
       value: Zombie 2
@@ -56,6 +60,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 677479024336804568, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.276
+      objectReference: {fileID: 0}
     - target: {fileID: 677479024336804571, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -68,6 +76,10 @@ PrefabInstance:
       propertyPath: speed
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 6532282828051799284, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 737c112abb7ab2949b63722c51f3f637, type: 2}
     - target: {fileID: 8379292141603330188, guid: 6cb71628b219e814baeaac0d69524172, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
