@@ -8,7 +8,7 @@ public class UIAmmoCounter : MonoBehaviour
 
     private void Awake()
     {
-        player.OnAmmoSpent.AddListener(UpdateUiCounter);
+        player.OnAmmoUpdated.AddListener(UpdateUiCounter);
         UpdateUiCounter(player.Ammo);
     }
 

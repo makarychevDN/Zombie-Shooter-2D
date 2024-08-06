@@ -12,7 +12,7 @@ public class Human : Character
     private float fireParticlesExistingTime = 0.05f;
 
     public UnityEvent OnAmmoEnded;
-    public UnityEvent<int> OnAmmoSpent;
+    public UnityEvent<int> OnAmmoUpdated;
 
     public int Ammo => ammo;
 
@@ -24,7 +24,7 @@ public class Human : Character
         spawnedBullet.SetVelocity(pointOfBulletSpawn.right);
 
         ammo--;
-        OnAmmoSpent.Invoke(ammo);
+        OnAmmoUpdated.Invoke(ammo);
 
         if (ammo == 0)
         {
@@ -38,6 +38,12 @@ public class Human : Character
         {
             Invoke(nameof(ShootOnce), i * timeBetweenShotsInBurst);
         }
+    }
+
+    public void PickUpAmmo(int value)
+    {
+        ammo += value;
+        OnAmmoUpdated.Invoke(ammo);
     }
 
     private void DisableFireParticles() => fireParticles.SetActive(false);
