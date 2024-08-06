@@ -95,6 +95,14 @@ PrefabInstance:
       propertyPath: pointOfBulletSpawn
       value: 
       objectReference: {fileID: 8303558311814710149}
+    - target: {fileID: 803397122344492591, guid: d340464880695844893c29278fd25990, type: 3}
+      propertyPath: amountOfBulletsInBurst
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 803397122344492591, guid: d340464880695844893c29278fd25990, type: 3}
+      propertyPath: timeBetweenShotsInBurst
+      value: 0.05
+      objectReference: {fileID: 0}
     - target: {fileID: 803397122344492625, guid: d340464880695844893c29278fd25990, type: 3}
       propertyPath: m_Offset.x
       value: 0
@@ -160,3 +168,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   character: {fileID: 7666175159230260912}
+  requredHoldingTimeToFireBurst: 0.1
