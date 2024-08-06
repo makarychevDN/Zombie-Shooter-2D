@@ -20,6 +20,12 @@ public class Human : Character
 
     public void ShootOnce()
     {
+        if (ammo == 0)
+        {
+            OnAmmoEnded.Invoke();
+            return;
+        }
+
         var spawnedBullet = Instantiate(bulletPrefab, pointOfBulletSpawn.transform.position, Quaternion.identity);
         spawnedBullet.SetVelocity(pointOfBulletSpawn.right);
 
@@ -29,11 +35,6 @@ public class Human : Character
 
         ammo--;
         OnAmmoUpdated.Invoke(ammo);
-
-        if (ammo == 0)
-        {
-            OnAmmoEnded.Invoke();
-        }
     }
 
     public void FireBurst()
